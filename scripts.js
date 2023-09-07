@@ -7,7 +7,7 @@ updateView();
 function updateView() {
     let HTML = '';
     HTML = /*HTML*/`
-        <textarea spellcheck="false" onchange="textField=this.value">${textField}</textarea><br />
+        <textarea spellcheck="false"  onchange="textField=this.value">${textField}</textarea><br />
         <button id="countButton">Klikk meg for å telle ord!</button>
         <div>${result}</div>
     `;
@@ -19,19 +19,15 @@ function updateView() {
 
 //controller
 function countWords() {
-    textField = document.querySelector('textarea').value;
-
-    let wordList = textField.split(' ');
     let wordCount = {};
     for (let n of wordList) {
+        if (n === "") continue;
         if (wordCount.hasOwnProperty(n)) wordCount[n]++;
         else wordCount[n] = 1;
     }
     console.log(wordList);
     console.log(wordCount);
     sortObj(wordCount);
-
-    document.querySelector('textarea').value = textField;
 }
 
 function sortObj(obj) {
