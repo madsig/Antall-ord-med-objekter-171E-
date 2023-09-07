@@ -7,7 +7,7 @@ updateView();
 function updateView() {
     let HTML = '';
     HTML = /*HTML*/`
-        <textarea spellcheck="false"  onchange="textField=this.value">${textField}</textarea><br />
+        <textarea spellcheck="false" onchange="textField=this.value">${textField}</textarea><br />
         <button id="countButton">Klikk meg for å telle ord!</button>
         <div>${result}</div>
     `;
